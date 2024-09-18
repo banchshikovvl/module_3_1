@@ -24,15 +24,7 @@ def count_calls():
 # длины этой строки, строку в верхнем регистре, строку в нижнем регистре.
 def string_info(string):
     count_calls()
-    tuple_ = []
-    str_ = len(string)
-    str_1 = string.upper()
-    str_2 = string.lower()
-    tuple_.append(str_)
-    tuple_.append(str_1)
-    tuple_.append(str_2)
-    tuple_1 = tuple(tuple_)
-    return tuple_1
+    return len(string), string.upper(), string.lower()
 
 
 # Функция is_contains принимает два аргумента: строку и список, и возвращает True, если строка находится в этом списке,
@@ -42,15 +34,14 @@ def is_contains(string, list_to_search):
     lowercase_list = [s.lower() for s in list_to_search]
     string_l = string.lower()
     if string_l in lowercase_list:
-        a = True
+        return True
     else:
-        a = False
-    return a
+        return False
 
 
 print(string_info('Capybara'))
 print(string_info('Armageddon'))
-print(string_info('Why my?1'))
+print(string_info('Urban University'))
 print(is_contains('Urban', ['ban', 'BaNaN', 'urBAN']))  # Urban ~ urBAN
 print(is_contains('cycle', ['recycling', 'cyclic']))  # No matches
 print(calls)
